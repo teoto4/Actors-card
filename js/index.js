@@ -7,12 +7,15 @@ let set_list = new Set();
 function create_list() {
     console.log("work");
     console.log(set_list.size);
-    for(let i = 0; i < set_list.size; i++){
+
+    choosed_list.innerHTML = '';
+
+    set_list.forEach((actor) => {
         console.log('create');
         const li_choose = document.createElement('li');
-        li_choose.textContent = set_list.keys(0).firstName;
+        li_choose.textContent = actor.firstName + ' ' + actor.lastName;
         choosed_list.append(li_choose);
-    }
+    });
 }
 
 function createCard(){
@@ -28,7 +31,7 @@ function createCard(){
         const social_a = document.createElement('a');
         const  social_a_img = document.createElement('img');
         const name_lastName = actors[i].firstName + ' ' + actors[i].lastName;
-        card.setAttribute('id', `card#${i + 1}`)
+        card.setAttribute('id', `card#${i}`)
         //get_content
         img.setAttribute("src", actors[i].profilePicture);
         name.textContent = name_lastName;
