@@ -1,3 +1,4 @@
+//initial
 const actor_cards = document.querySelector('#actor_cards');
 console.log(actor_cards);
 
