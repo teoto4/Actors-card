@@ -7,10 +7,10 @@ let set_list = new Set();
 function create_list() {
     console.log("work");
     console.log(set_list.size);
-    for(i = 0; i < set_list.size; i++){
+    for(let i = 0; i < set_list.size; i++){
         console.log('create');
         const li_choose = document.createElement('li');
-        li_choose.textContent = 'hi';
+        li_choose.textContent = set_list.keys(0).firstName;
         choosed_list.append(li_choose);
     }
 }
