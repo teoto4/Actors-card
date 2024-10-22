@@ -25,6 +25,14 @@ function createCard(){
         social.append(social_a);
         social_a.append(social_a_img);
         
+
+        card.addEventListener('click', ()=>{
+            console.log('choose work');
+            
+            const choose_li = createElement('li');
+            choose_li.textContent = actors[i].firstName + ' ' + actors[i].lastName;
+            choosed_list.append(choose_li);
+        })
     }
  
  console.dir(actor_cards);
