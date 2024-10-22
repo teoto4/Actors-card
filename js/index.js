@@ -1,6 +1,7 @@
 //initial
 const actor_cards = document.querySelector('#actor_cards');
 console.log(actor_cards);
+const choosed_list = document.querySelector('#choosed_list')
 
 let set_list = new Set();
 
@@ -46,8 +47,8 @@ function createCard(){
         social_a.append(social_a_img);
  
         card.addEventListener('click', ()=>{
-            const card_id = i;
-            set_list.add(actors[card_id]);
+            const card_id = card.getAttribute('id');
+            set_list.add(actors[card_id[card_id.length - 1]]);
             console.log(set_list);
             create_list();
         })
