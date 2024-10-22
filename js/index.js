@@ -46,8 +46,8 @@ function createCard(){
         social_a.append(social_a_img);
  
         card.addEventListener('click', ()=>{
-            const card_id = card.getAttribute('id');
-            set_list.add(actors[card_id[card_id.length - 1]]);
+            const card_id = i;
+            set_list.add(actors[card_id]);
             console.log(set_list);
             create_list();
         })
