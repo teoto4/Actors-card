@@ -3,11 +3,18 @@ const actor_cards = document.querySelector('#actor_cards');
 console.log(actor_cards);
 
 let set_list = new Set();
+console.log(set_list.size);
 
-function create_list(set_list) {
-    const choose_li = document.createElement('li');
-    choose_li.textContent = name_lastName;
-    choosed_list.append(choose_li);
+
+function create_list() {
+    console.log("work");
+    
+    for(i = 0; i < set_list.size; i++){
+        console.log('create');
+        const li_choose = createElement('li');
+        li_choose.textContent = 'hi';
+        choosed_list.append(li_choose);
+    }
 }
 
 function createCard(){
@@ -41,8 +48,10 @@ function createCard(){
             const card_id = card.getAttribute('id');
             set_list.add(actors[card_id[card_id.length - 1]]);
             console.log(set_list);
+            create_list();
         })
     }
 }
 
+create_list();
 createCard()
