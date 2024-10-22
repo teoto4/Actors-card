@@ -13,8 +13,8 @@ function createCard(){
         const social_a = document.createElement('a');
         const  social_a_img = document.createElement('img')
         //get_content
-        img.setAttribute("src", actors[i].photo);
-        name.textContent = actors[i].name;
+        img.setAttribute("src", actors[i].profilePicture);
+        name.textContent = actors[i].firstName + ' ' + actors[i].lastName;
 
         social.classList.add('social_icon')
         social_a.setAttribute("href", actors[i].inst); 

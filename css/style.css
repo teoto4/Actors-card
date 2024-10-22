@@ -22,10 +22,12 @@
     }
     .container_actor_cards{
         margin-top: 120px;
-        max-width: 1200px;
+        max-width: 1200px; 
         .actor_cards{
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;;
             li{ 
+                margin-top: 20px;
                 padding-left: 15px;
                 padding-right: 15px;
                 border-radius: 15px;
