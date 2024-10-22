@@ -39,12 +39,8 @@ function createCard(){
  
         card.addEventListener('click', ()=>{
             const card_id = card.getAttribute('id');
-            console.log(actors);
-            
-            console.log(card_id[card_id.length - 1]);
-            
-            
-            
+            set_list.add(actors[card_id[card_id.length - 1]]);
+            console.log(set_list);
         })
     }
 }
