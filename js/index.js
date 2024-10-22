@@ -16,6 +16,12 @@ function create_list() {
         const li_choose = document.createElement('li');
         li_choose.textContent = actor.firstName + ' ' + actor.lastName;
         choosed_list.append(li_choose);
+
+        li_choose.addEventListener('click', ()=>{
+            console.log('clicked');
+            set_list.delete(actor);
+            create_list();
+        })
     });
 }
 
