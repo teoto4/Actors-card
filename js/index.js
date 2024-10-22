@@ -11,10 +11,11 @@ function createCard(){
         const name = document.createElement('p');
         const social = document.createElement('ul');
         const social_a = document.createElement('a');
-        const  social_a_img = document.createElement('img')
+        const  social_a_img = document.createElement('img');
+        const name_lastName = actors[i].firstName + ' ' + actors[i].lastName
         //get_content
         img.setAttribute("src", actors[i].profilePicture);
-        name.textContent = actors[i].firstName + ' ' + actors[i].lastName;
+        name.textContent = name_lastName;
 
         social.classList.add('social_icon')
         social_a.setAttribute("href", actors[i].inst); 
@@ -29,8 +30,8 @@ function createCard(){
         card.addEventListener('click', ()=>{
             console.log('choose work');
             
-            const choose_li = createElement('li');
-            choose_li.textContent = actors[i].firstName + ' ' + actors[i].lastName;
+            const choose_li = document.createElement('li');
+            choose_li.textContent = name_lastName;
             choosed_list.append(choose_li);
         })
     }
