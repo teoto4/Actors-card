@@ -3,15 +3,13 @@ const actor_cards = document.querySelector('#actor_cards');
 console.log(actor_cards);
 
 let set_list = new Set();
-console.log(set_list.size);
-
 
 function create_list() {
     console.log("work");
-    
+    console.log(set_list.size);
     for(i = 0; i < set_list.size; i++){
         console.log('create');
-        const li_choose = createElement('li');
+        const li_choose = document.createElement('li');
         li_choose.textContent = 'hi';
         choosed_list.append(li_choose);
     }
