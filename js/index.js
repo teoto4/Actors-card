@@ -31,26 +31,31 @@ function createCard(){
         if(!actors[i].firstName){
             continue;
         }
+
         const card = document.createElement('li');
         const img = document.createElement('img');
         const name = document.createElement('p');
         const social = document.createElement('ul');
-        const social_a = document.createElement('a');
-        const  social_a_img = document.createElement('img');
+
+        actors[i].contacts.forEach(contact => {
+            const social_a = document.createElement('a');
+            const social_a_img = document.createElement('img');
+            social_a.setAttribute("href", contact); 
+            social_a_img.setAttribute('src', 'URL_Иконки');
+            social_a.append(social_a_img);
+            social.append(social_a);
+        });
+
         const name_lastName = actors[i].firstName + ' ' + actors[i].lastName;
         card.setAttribute('id', `card#${i}`)
         //get_content
         img.setAttribute("src", actors[i].profilePicture);
         name.textContent = name_lastName;
-
-        social.classList.add('social_icon')
-        social_a.setAttribute("href", actors[i].inst); 
-        social_a_img.setAttribute('src', actor_cards.inst_icon)
+        social.classList.add('social_icon');
+        
         //append
         actor_cards.append(card);
         card.append(img, name, social);
-        social.append(social_a);
-        social_a.append(social_a_img);
  
         card.addEventListener('click', ()=>{
             const card_id = card.getAttribute('id');
