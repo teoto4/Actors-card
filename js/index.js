@@ -2,6 +2,13 @@
 const actor_cards = document.querySelector('#actor_cards');
 console.log(actor_cards);
 
+let set_list = new Set();
+
+function create_list(set_list) {
+    const choose_li = document.createElement('li');
+    choose_li.textContent = name_lastName;
+    choosed_list.append(choose_li);
+}
 
 function createCard(){
     for(i = 0; i < actors.length; i++){
@@ -12,7 +19,8 @@ function createCard(){
         const social = document.createElement('ul');
         const social_a = document.createElement('a');
         const  social_a_img = document.createElement('img');
-        const name_lastName = actors[i].firstName + ' ' + actors[i].lastName
+        const name_lastName = actors[i].firstName + ' ' + actors[i].lastName;
+        card.setAttribute('id', `card#${i + 1}`)
         //get_content
         img.setAttribute("src", actors[i].profilePicture);
         name.textContent = name_lastName;
@@ -25,19 +33,11 @@ function createCard(){
         card.append(img, name, social);
         social.append(social_a);
         social_a.append(social_a_img);
-        
 
         card.addEventListener('click', ()=>{
-            console.log('choose work');
-            
-            const choose_li = document.createElement('li');
-            choose_li.textContent = name_lastName;
-            choosed_list.append(choose_li);
+            console.log(card);
         })
     }
- 
- console.dir(actor_cards);
- 
 }
 
 createCard()

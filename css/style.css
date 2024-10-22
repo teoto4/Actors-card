@@ -93,6 +93,7 @@
 
 #choosed_list{
     margin-top: 50px;
+    list-style-type: none;
     li{
         color: black;
         font-size: 25px;
