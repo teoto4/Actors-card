@@ -13,6 +13,9 @@ function create_list(set_list) {
 function createCard(){
     for(i = 0; i < actors.length; i++){
         //create_element
+        if(!actors[i].firstName){
+            continue;
+        }
         const card = document.createElement('li');
         const img = document.createElement('img');
         const name = document.createElement('p');
@@ -33,9 +36,15 @@ function createCard(){
         card.append(img, name, social);
         social.append(social_a);
         social_a.append(social_a_img);
-
+ 
         card.addEventListener('click', ()=>{
-            console.log(card);
+            const card_id = card.getAttribute('id');
+            console.log(actors);
+            
+            console.log(card_id[card_id.length - 1]);
+            
+            
+            
         })
     }
 }
