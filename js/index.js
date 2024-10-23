@@ -5,6 +5,15 @@ const choosed_list = document.querySelector('#choosed_list')
 
 let set_list = new Set();
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 function create_list() {
     console.log("work");
     console.log(set_list.size);
@@ -41,7 +50,7 @@ function createCard(){
             const social_a = document.createElement('a');
             const social_a_img = document.createElement('img');
             social_a.setAttribute("href", contact); 
-            social_a_img.setAttribute('src', 'URL_Иконки');
+            social_a_img.setAttribute('src', './img/faceboock.png');
             social_a.append(social_a_img);
             social.append(social_a);
         });
@@ -52,7 +61,17 @@ function createCard(){
         img.setAttribute("src", actors[i].profilePicture);
         name.textContent = name_lastName;
         social.classList.add('social_icon');
-        
+
+        img.addEventListener('error', ()=>{
+            const initial = name_lastName.split(' ')
+            img.style.display = 'none';
+            const initial_block = document.createElement('div');
+            initial_block.classList.add('initial_block');
+            initial_block.style.backgroundColor = getRandomColor();
+            initial_block.innerText = initial[0][0] + initial[1][0];
+            card.prepend(initial_block);
+        })
+
         //append
         actor_cards.append(card);
         card.append(img, name, social);
