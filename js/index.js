@@ -1,6 +1,5 @@
 //initial
 const actor_cards = document.querySelector('#actor_cards');
-console.log(actor_cards);
 const choosed_list = document.querySelector('#choosed_list')
 
 let set_list = new Set();
@@ -15,8 +14,7 @@ function getRandomColor() {
 }
 
 function create_list() {
-    console.log("work");
-    console.log(set_list.size);
+    
 
     choosed_list.innerHTML = '';
 
@@ -63,7 +61,7 @@ function createCard(){
 
         const name_lastName = actors[i].firstName + ' ' + actors[i].lastName;
         card.setAttribute('id', `card#${i}`)
-        //get_content
+        
         img.setAttribute("src", actors[i].profilePicture);
         name.textContent = name_lastName;
         social.classList.add('social_icon');
@@ -78,7 +76,7 @@ function createCard(){
             card.prepend(initial_block);
         })
 
-        //append
+        
         actor_cards.append(card);
         card.append(img, name, social);
  
