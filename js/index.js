@@ -50,7 +50,13 @@ function createCard(){
             const social_a = document.createElement('a');
             const social_a_img = document.createElement('img');
             social_a.setAttribute("href", contact); 
-            social_a_img.setAttribute('src', './img/faceboock.png');
+            if(contact.includes('instagram.com')){
+                social_a_img.setAttribute('src', './img/insta.png')
+            } else if(contact.includes('facebook.com')){
+                social_a_img.setAttribute('src', './img/new_facebook.png')
+            } else if(contact.includes('twitter.com')){
+                social_a_img.setAttribute('src', './img/twitter.png')
+            }
             social_a.append(social_a_img);
             social.append(social_a);
         });
